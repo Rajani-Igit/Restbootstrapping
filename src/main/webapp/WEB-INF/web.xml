@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  <servlet-name>JersyServlet</servlet-name>
+  <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+  <!-- 
+  if you are not using configuration extending from Application or ResourceConfig then use this init param
+  to scan the packages to identify  your resources
+  <init-param>
+  <param-name>jersey.config.server.provider.packages</param-name>
+  <param-value>com.apps.test.resources</param-value>
+</init-param> -->
+<init-param>
+<param-name>javax.ws.rs.Application</param-name>
+<param-value>com.apps.test.config.ApplicationConfig</param-value>
+</init-param>
+  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>JersyServlet</servlet-name>
+  <url-pattern>/test/*</url-pattern>
+  </servlet-mapping>
+</web-app>
